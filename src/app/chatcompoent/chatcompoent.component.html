@@ -1,0 +1,53 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-info">
+            <h4 class="card-title">Chat Bot</h4>
+            <p class="card-category">Complete information about images</p>
+          </div>
+          <div class="card-body">
+    <div class="msg-wrapper" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+  <ng-container *ngFor="let m of messages | async">
+  <div class="message" [ngClass]="{ 'from': m.from === 'bot',
+                                    'to':   m.from === 'user' }">
+
+    <div *ngIf="m.from === 'user'" class="userMsg">
+      <span class="msg-icon" ><i class="fa fa-user"></i>
+
+      </span>
+      <div class="talktext">
+       <p > {{ m.msg }}</p>
+      </div>
+
+
+    </div>
+
+    <div *ngIf="m.from === 'bot'" class="botMsg">
+      <span class="msg-icon">
+        <i class="fa fa-comment"></i>
+      </span>
+      <p>{{ m.msg }}</p>
+    </div>
+    </div>
+</ng-container>
+    </div>
+    <div id="msg-scroll"></div>
+    <div class="dogbot-inputs">
+      <div class="col-md-12">
+        <input matInput type="text" name="inputImage" id="inputImage" value="" />
+        <mat-form-field class="example-full-width">
+
+          <input matInput placeholder="Ask something..." required [(ngModel)]="strMsg" (keyup.enter)="sendMessage()">
+        </mat-form-field>
+        <button class="btn btn-icon btn-info btn-simple btn-round send-btn" (click)="sendMessage()">
+          <img src="../../assets/img/send_arrow.png" width="30"> </button>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+  </div>
+</div>
+</div>

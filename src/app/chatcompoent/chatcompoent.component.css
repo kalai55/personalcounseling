@@ -1,0 +1,72 @@
+.msg-container{
+  position: relative;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100%;
+  border: 4px solid rgb(102, 3, 3);
+}
+
+
+.msg-wrapper{
+  height: 350px;
+  min-height: 100%;
+  overflow-y: auto;
+}
+.dogbot-title{
+  border: 6px solid  rgb(102, 3, 3);
+  background: rgb(102, 3, 3);
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.send-btn{
+  position: absolute;
+  right: 13px;
+  top: -13px;
+  padding: 6px;
+}
+.btn-primary {
+  color: #fff;
+  background: rgb(102, 3, 3);
+  border-color: rgb(102, 3, 3)
+}
+.talk-bubble {
+	margin: 40px;
+  display: inline-block;
+  position: relative;
+	width: 200px;
+	height: auto;
+	background-color: lightyellow;
+}
+.msg-icon{
+  margin-left: 5px;
+}
+.userMsg{
+  background: #25c5da73;
+  text-align: justify;
+  shape-rendering: geometricPrecision;
+  padding: 4px 15px 0 0;
+  
+}
+.botMsg{
+  text-align: left;
+  background: #c1bfbf;
+  text-align: justify;
+  padding-left: 15px;
+}
+.dogbot-inputs{
+  text-align: center;
+}
+
+.fa-user{
+    float: right;
+    background: lightgreen;
+}
+
+.talktext{
+  text-align: right;
+}
+
+
+
+

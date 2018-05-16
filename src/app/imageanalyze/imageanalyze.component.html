@@ -1,0 +1,59 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-info">
+            <h4 class="card-title">Detect things</h4>
+            <p class="card-category">Detect things in an image</p>
+          </div>
+          <div class="card-body">
+            <div class="msg-wrapper">
+              <div class="category">
+              <div class="category-name" *ngIf="imgCategory.length != 0">
+                {{imgCategory[0].name}}
+              </div>
+              <div class="image-caption" *ngIf="imgCaption.length != 0">
+                {{imgCaption[0].text}}
+              </div>
+              <div class="image-format" *ngIf="imgmetadata.length != 0">
+                Image format: {{imgmetadata.format}}
+              </div>
+            </div>
+              <div id="imageDiv" style="width:420px; display:table-cell;">
+                <b class="title">Source image:</b>
+                <br>
+                <img id="sourceImage" width="400" />
+              </div>
+              <div class="alert-content" *ngIf="errString">
+                <div class="alert alert-info alert-with-icon" data-notify="container">
+                  <i class="material-icons" data-notify="icon">report</i>
+                  <span>{{errString}}</span>
+                </div>
+              </div>
+              <div *ngFor="let item of imgRes let i=index" class="alert-content">
+                <div *ngIf="item[i] == 'food' || item[i] == 'meat' || item[i] == 'eating' || item[i] == 'bottle' || item[i] == 'water' || item[i] == 'phone' || item[i] == 'cellphone' || item[i] == 'electronics'">
+                  <div class="alert alert-info alert-with-icon" data-notify="container">
+                    <i class="material-icons" data-notify="icon">report</i>
+                    <span>This kind of things or objects strictly prohibited inside ODC! It will trigger the mail to security team! For more details, get from BOT.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="msg-scroll"></div>
+            <div class="dogbot-inputs">
+              <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+
+                  <input matInput id="inputImage" placeholder="Image link address" required [(ngModel)]="linkAddress" (keyup.enter)="processImage()">
+                </mat-form-field>
+                <button class="btn btn-icon btn-info btn-simple btn-round send-btn" (click)="processImage()">
+                  <img src="../../assets/img/send_arrow.png" width="30"> </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
